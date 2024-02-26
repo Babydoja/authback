@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "auth": "nodemon server.js",
-    "auth1": "nodemon server1.js"
+    "start": "node ./src/server.js",
+    "auth": "nodemon ./src/server.js"
   },
   "keywords": [],
   "author": "",

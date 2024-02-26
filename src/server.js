@@ -5,7 +5,7 @@ const cors=require('cors')
 app.use(cors(
     {origin:['http://localhost:3000',]}
 ))
-const userRouter=require('./Routes/Routes')
+const userRouter=require('../Routes/Routes')
 const dotenv =require("dotenv").config()
 const mongoose = require("mongoose")
 const PORT=7000
