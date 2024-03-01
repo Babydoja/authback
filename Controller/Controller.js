@@ -18,10 +18,10 @@ const registerUser = (async(req,res)=>{
     }
     //harshing the password
 //    const salt= await bcrypt.getSalt(10)
-//    const salt =await bcrypt.genSalt(10)
-//    const hashpassword = await bcrypt.hash(password,salt)
+   const salt =await bcrypt.genSalt(10)
+   const hashpassword = await bcrypt.hash(password,salt)
 ///HASHING THE PASSWORD 
-   const hashpassword = await bcrypt.hash(password,10)
+//    const hashpassword = await bcrypt.hash(password,10)
     //create user
     const user = await User.create(
         {
@@ -41,6 +41,10 @@ const loginUser= async(req,res)=>{
     const{email,password}=req.body
     const user=await User.findOne({email})
     console.log(user);
+    if (!password) {
+        res.json('password is not correct')
+        
+    }
     if (!user) {
         res.json('no user with that email')
 

@@ -1,9 +1,9 @@
 const express =require("express")
-const app = express(express)
+const app = express()
 const cors=require('cors')
 
 app.use(cors(
-    {origin:['http://localhost:3000',]}
+    {origin:['http://localhost:3000','https://authfrontend-two.vercel.app/']}
 ))
 const userRouter=require('../Routes/Routes')
 const dotenv =require("dotenv").config()
