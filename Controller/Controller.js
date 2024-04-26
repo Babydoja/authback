@@ -4,6 +4,7 @@ const jwt=require('jsonwebtoken')
 
 const registerUser = (async(req,res)=>{
     const{email,password}=req.body
+    
     ///validation 
     if (!password||!email) {
         res.status(400).json('kindly fill the necessary details') 
@@ -18,10 +19,10 @@ const registerUser = (async(req,res)=>{
     }
     //harshing the password
 //    const salt= await bcrypt.getSalt(10)
-   const salt =await bcrypt.genSalt(10)
-   const hashpassword = await bcrypt.hash(password,salt)
+//    const salt =await bcrypt.genSalt(10)
+//    const hashpassword = await bcrypt.hash(password,salt)
 ///HASHING THE PASSWORD 
-//    const hashpassword = await bcrypt.hash(password,10)
+    const hashpassword = await bcrypt.hash(password,10)
     //create user
     const user = await User.create(
         {
@@ -33,6 +34,7 @@ const registerUser = (async(req,res)=>{
         
     )
     res.send(user)
+    console.log(user);
 
 }
 )
