@@ -8,7 +8,7 @@ const PORT=7000
 
 //server route
 app.use(cors(
-    {origin:['http://localhost:3000','https://authfrontend-two.vercel.app/']}
+    {origin:['http://localhost:3000','https://authfrontend-two.vercel.app']}
 ))
 app.get('/',(req,res)=>{
     res.send('server home page')
