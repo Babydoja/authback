@@ -6,8 +6,6 @@ const dotenv =require("dotenv").config()
 const mongoose = require("mongoose")
 const PORT=7000
 
-
-
 //server route
 app.use(cors(
     {origin:['http://localhost:3000','https://authfrontend-two.vercel.app/']}
